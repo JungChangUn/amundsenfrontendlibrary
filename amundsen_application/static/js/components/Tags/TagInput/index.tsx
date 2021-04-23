@@ -23,7 +23,7 @@ import TagInfo from '../TagInfo';
 
 import './styles.scss';
 
-const VALID_TAG_REGEXP = new RegExp(/^([a-z0-9_]+)$/);
+const VALID_TAG_REGEXP = new RegExp(/^([a-z0-9가-힣_]+)$/);
 const BATCH_EDIT_TAG_OPTION = 'amundsen_batch_edit';
 
 const FILTER_COMMON_TAGS = (otherArray) => (current) =>

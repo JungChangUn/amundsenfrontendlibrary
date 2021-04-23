@@ -32,7 +32,14 @@ def get_auth_user(app: Flask) -> User:
     :return: A class UserInfo (Note, there isn't a UserInfo class, so we use Any)
     """
     from flask import g
-    user_info = load_user(g.oidc_id_token)
+    # user_info = load_user(g.oidc_id_token)
+    user_info = type('UserInfo', (object,), g.oidc_id_token)
+    # temp = vars(animal)
+    # for item in temp:
+    #     print(item + ' : ' + str(temp[item]))
+    #user_infox = {"email":user_info["email"], "user_id": user_info["email"], "profile_url":"", "display_name":user_info["email"]}
+    user_info.user_id  = user_info.email
+    user_info.display_name = user_info.email
     return user_info
 
 
